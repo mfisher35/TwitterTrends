@@ -1,0 +1,2 @@
+#python manage.py runserver 172.31.37.24:8000
+python manage.py runserver ec2-54-200-231-147.us-west-2.compute.amazonaws.com:8000

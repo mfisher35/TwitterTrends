@@ -1,0 +1,54 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+     <link href = "{% static 'main/css/bootstrap.min.css' %}" rel = "stylesheet">
+     <link href = "{% static 'main/css/styles.css' %}" rel = "stylesheet">
+
+<div id="header">
+    <head>
+     <title> Twitter Top Tweets </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <h1> <center> <img src="{% static 'main/TwitterTrends2.png' %}"> </center> </h1>
+     
+    </head>
+
+	</div>
+	<div id="navigation">
+     <link href = "{% static 'main/style.css' %}" rel = "stylesheet"> 
+
+ <center>
+<a class="btn btn-primary btn-xs" href="/main" role="button"> All</a><a class="btn btn-primary btn-xs" href="0" role="button"> Culture & Politics</a><a class="btn btn-primary btn-xs" href="1" role="button"> Gaming</a><a class="btn btn-primary btn-xs" href="2" role="button"> Religion</a><a class="btn btn-primary btn-xs" href="3" role="button"> Business</a><a class="btn btn-primary btn-xs" href="4" role="button"> Computer & Internet</a><a class="btn btn-primary btn-xs" href="5" role="button"> Science & Technology</a><a class="btn btn-primary btn-xs" href="6" role="button"> Sports</a><a class="btn btn-primary btn-xs" href="7" role="button"> Recreation</a><a class="btn btn-primary btn-xs" href="8" role="button"> Health</a><a class="btn btn-primary btn-xs" href="9" role="button"> Arts & Entertainment</a><a class="btn btn-primary btn-xs" href="10" role="button"> Weather</a><a class="btn btn-primary btn-xs" href="11" role="button"> Law & Crime</a>
+  </center>                  
+<p><p><p><p>
+	</div>
+	<div id="content">
+
+<br> <br>
+<center>
+<p style="font-size:xx-large;"><b> Top Tweets:  {{category}} </b></p>
+  </center>
+		
+<center>    <table border=1>  <tr>
+    <td> <center> <p style ="font-size:medium"> <b> User </p> </b> </td> </center> <td> <center> <p style ="font-size:medium"> <b> Tweet</b></p> </td> </center>  <td> <center><b> <p style ="font-size:medium"> No. Retweets </b></p> </td> </center></b> <tr></p>
+ 
+    {% for tweet in tweet_list %}
+        <td>  @{{tweet.user.screen_name}} </td> <td> {{tweet.text}} </td>  <td> {{tweet.retweet_count}} </td><tr> 
+    {% endfor %}
+   
+  </table></center> 
+    <script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+    <script src ="{% static 'main/js/bootstrap.js' %}"> </script>
+    </body>
+
+ 		</p>
+	
+	</div>
+</div>
+
+
+
+   
+
+</html>
